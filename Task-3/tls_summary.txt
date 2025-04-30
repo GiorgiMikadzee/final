@@ -1,0 +1,17 @@
+I used OpenSSL to connect to cloudflare.com and inspected the TLS handshake using Wireshark.
+
+The connection used TLS 1.3 with the cipher suite TLS_AES_256_GCM_SHA384, which is a strong modern encryption option.
+
+From the OpenSSL output, I could see the full certificate chain:
+
+The server certificate was issued to cloudflare.com
+
+It was signed by an intermediate certificate authority (WE1 from Google Trust Services)
+
+The root authority was GTS Root R4, ultimately trusted via GlobalSign
+
+In Wireshark, I filtered for TLS traffic and found the Client Hello message with the SNI (Server Name Indication) clearly showing cloudflare.com. 
+This confirms that my machine initiated a secure connection to that domain.
+
+The server responded with its certificate and completed the handshake using ECDSA (Elliptic Curve Digital Signature Algorithm) and a temporary X25519 key for key exchange. 
+This confirms use of ephemeral key exchange, which supports forward secrecy.

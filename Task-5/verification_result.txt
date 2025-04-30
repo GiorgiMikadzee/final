@@ -1,2 +1,0 @@
-original.txt: PASS
-tampered.txt: FAIL

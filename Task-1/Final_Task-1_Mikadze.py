@@ -1,4 +1,3 @@
-# encrypted_messaging_app.py (Lab 6 Padding Oracle style)
 
 from cryptography.hazmat.primitives import padding as sympad
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes

@@ -1,0 +1,9 @@
+This signature proves that the message came from Alice.
+
+Alice used her private key to generate the digital signature for original_message.txt.
+Anyone with Alice’s public key can verify this signature and confirm:
+- The message was not tampered with.
+- The message truly came from Alice (authenticity).
+
+This is possible because only Alice has access to the private key used for signing,
+while her public key (public.pem) is shared with others for verification.
